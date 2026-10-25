@@ -1,51 +1,34 @@
 import {FileReader} from './file-reader.interface.js';
-import {readFileSync} from 'node:fs';
-import {Offer} from '../types/offer.type.js';
-import {OfferType} from '../types/offer-types.type.js';
-import {Amenity} from '../types/amenity.type.js';
+import EventEmitter from 'node:events';
+import {createReadStream} from 'node:fs';
 
-export class TsvFileReader implements FileReader {
-  private fileData = '';
+const CHUNK_SIZE = 16384;
+
+export class TsvFileReader extends EventEmitter implements FileReader {
 
   constructor(private readonly filePath: string) {
+    super();
   }
 
-  public read(): void {
-    this.fileData = readFileSync(this.filePath, 'utf-8');
-  }
+  public async read(): Promise<void> {
+    const stream = createReadStream(this.filePath, {highWaterMark: CHUNK_SIZE, encoding: 'utf-8'});
 
-  public format(): Offer[] {
-    if(!this.fileData) {
-      throw new Error('File doesnt read');
+    let remainingData = '';
+    let nextLinePosition = -1;
+    let importedRowCount = 0;
+
+    for await (const chunk of stream) {
+      remainingData += chunk.toString();
+
+      while ((nextLinePosition = remainingData.indexOf('\n')) >= 0) {
+        const completeRow = remainingData.slice(0, nextLinePosition + 1);
+        remainingData = remainingData.slice(++nextLinePosition);
+        importedRowCount++;
+
+        this.emit('line', completeRow);
+      }
     }
 
-    return this.fileData.split('\n')
-      .filter((row) => row.trim().length > 0)
-      .map((row) => row.split('\t'))
-      .map(([name, description, date, city, previewImage, images, isPremium, isFavourite, rating, type, roomQty, guestQty, count, amenities, author, commentsQty, latitude, longitude]) => ({
-        name,
-        description,
-        date,
-        city: {name: city},
-        previewImage,
-        images: images.split(';'),
-        isPremium: !!isPremium,
-        isFavourite: !!isFavourite,
-        rating: Number(rating),
-        type: type as OfferType,
-        roomQty: Number(roomQty),
-        guestQty: Number(guestQty),
-        count: Number(count),
-        amenities: amenities.split(';') as Amenity[],
-        author: {
-          name: author.split(';')[0],
-          email: author.split(';')[1],
-        },
-        commentsQty: Number(commentsQty),
-        coordinates: {
-          latitude,
-          longitude,
-        },
-      }));
+    this.emit('end', importedRowCount);
   }
 }

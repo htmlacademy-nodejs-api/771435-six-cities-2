@@ -1,0 +1,170 @@
+{
+  "api": {
+    "name": [
+      "Уютная студия в центре",
+      "Светлая квартира у парка",
+      "Стильные апартаменты рядом с метро",
+      "Просторное жилье с панорамным видом",
+      "Комфортная квартира для командировок",
+      "Тихое место для отдыха семьей",
+      "Современная квартира после ремонта",
+      "Апартаменты в историческом центре",
+      "Квартира с балконом и красивым видом",
+      "Удобное жилье в шаговой доступности от всего"
+    ],
+    "description": [
+      "Уютное жилье в центре города",
+      "Светлая и просторная квартира с современным ремонтом",
+      "Тихое место, идеально подходит для отдыха и работы",
+      "Комфортное жилье со всем необходимым для проживания",
+      "Стильные апартаменты в шаговой доступности от метро",
+      "Жилье с отличным расположением и развитой инфраструктурой",
+      "Чистое и уютное пространство для комфортного отдыха",
+      "Просторное жилье с панорамным видом из окна",
+      "Удобное расположение рядом с основными достопримечательностями",
+      "Комфортабельное жилье для коротких и длительных поездок"
+    ],
+    "city": [
+      {
+        "name": "Paris",
+        "coordinates": {
+          "latitude": 48.85661,
+          "longitude": 2.351499
+        }
+      },
+      {
+        "name": "Cologne",
+        "coordinates": {
+          "latitude": 50.938361,
+          "longitude": 6.959974
+        }
+      },
+      {
+        "name": "Brussels",
+        "coordinates": {
+          "latitude": 50.846557,
+          "longitude": 4.351697
+        }
+      },
+      {
+        "name": "Amsterdam",
+        "coordinates": {
+          "latitude": 52.370216,
+          "longitude": 4.895168
+        }
+      },
+      {
+        "name": "Hamburg",
+        "coordinates": {
+          "latitude": 53.550341,
+          "longitude": 10.000654
+        }
+      },
+      {
+        "name": "Dusseldorf",
+        "coordinates": {
+          "latitude": 51.225402,
+          "longitude": 6.776314
+        }
+      }
+    ],
+    "previewImage": [
+      "preview-image-1.png",
+      "preview-image-2.png",
+      "preview-image-3.png",
+      "preview-image-4.png",
+      "preview-image-5.png",
+      "preview-image-6.png",
+      "preview-image-7.png",
+      "preview-image-8.png",
+      "preview-image-9.png",
+      "preview-image-10.png"
+    ],
+    "images": [
+      "house-image-1.png",
+      "house-image-2.png",
+      "house-image-3.png",
+      "house-image-4.png",
+      "house-image-5.png",
+      "house-image-6.png",
+      "house-image-7.png",
+      "house-image-8.png",
+      "house-image-9.png",
+      "house-image-10.png"
+    ],
+    "type": ["apartment", "house", "room", "hotel"],
+    "amenities": ["Breakfast", "Air conditioning", "Laptop friendly workspace", "Baby seat", "Washer", "Towels", "Fridge"],
+    "author": [
+      {
+        "name": "Александр",
+        "email": "alexander@mail.ru",
+        "avatar": "avatar-1.jpg",
+        "password": "pass1234",
+        "type": "pro"
+      },
+      {
+        "name": "Мария",
+        "email": "maria@mail.ru",
+        "avatar": "avatar-2.jpg",
+        "password": "pass2345",
+        "type": "default"
+      },
+      {
+        "name": "Дмитрий",
+        "email": "dmitry@mail.ru",
+        "avatar": "avatar-3.jpg",
+        "password": "pass3456",
+        "type": "pro"
+      },
+      {
+        "name": "Екатерина",
+        "email": "ekaterina@mail.ru",
+        "avatar": "avatar-4.jpg",
+        "password": "pass4567",
+        "type": "default"
+      },
+      {
+        "name": "Иван",
+        "email": "ivan@mail.ru",
+        "avatar": "avatar-5.jpg",
+        "password": "pass5678",
+        "type": "pro"
+      },
+      {
+        "name": "Анна",
+        "email": "anna@mail.ru",
+        "avatar": "avatar-6.jpg",
+        "password": "pass6789",
+        "type": "default"
+      },
+      {
+        "name": "Сергей",
+        "email": "sergey@mail.ru",
+        "avatar": "avatar-7.jpg",
+        "password": "pass7890",
+        "type": "pro"
+      },
+      {
+        "name": "Ольга",
+        "email": "olga@mail.ru",
+        "avatar": "avatar-8.jpg",
+        "password": "pass8901",
+        "type": "default"
+      },
+      {
+        "name": "Михаил",
+        "email": "mikhail@mail.ru",
+        "avatar": "avatar-9.jpg",
+        "password": "pass9012",
+        "type": "pro"
+      },
+      {
+        "name": "Наталья",
+        "email": "natalya@mail.ru",
+        "avatar": "avatar-10.jpg",
+        "password": "pass0123",
+        "type": "default"
+      }
+    ]
+  }
+}

@@ -10,6 +10,7 @@
     "strictFunctionTypes": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "strictPropertyInitialization": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "importHelpers": true,
