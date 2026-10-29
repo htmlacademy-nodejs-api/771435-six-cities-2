@@ -9,13 +9,13 @@ export class CliApplication {
   private commands: CommandCollection = {};
 
   public registerCommands(commandList: Command[]) {
-    commandList.forEach((command) => {
-      if(Object.hasOwn(this.commands, command.getName())) {
+    for (const command of commandList) {
+      if (this.commands[command.getName()]) {
         throw new Error(`Command ${command.getName()} is already exist`);
       }
 
       this.commands[command.getName()] = command;
-    });
+    }
   }
 
   public getCommand(commandName: string): Command {

@@ -1,6 +1,7 @@
 import {Command} from './command.interface.js';
 import {readFileSync} from 'node:fs';
 import chalk from 'chalk';
+import {logError} from "../../shared/helpers/index.js";
 
 type PackageJSONConfig = {
   version: string;
@@ -42,11 +43,7 @@ export class VersionCommand implements Command {
       console.info(chalk.green(version));
 
     } catch(err) {
-      console.error(`Error execute file on the path ${this.path}`);
-
-      if(err instanceof Error) {
-        console.log(`Error message: ${err.message}`);
-      }
+      logError(err, `Error execute file on the path ${this.path}`);
     }
-  };
+  }
 }
